@@ -1,0 +1,123 @@
+:root {
+    --bg-dark: #0b0e11;
+    --panel-bg: #15191d;
+    --accent-green: #4caf50;
+    --border-color: #3e444a;
+    --text-main: #e0e0e0;
+    --text-muted: #888;
+}
+
+body, html {
+    margin: 0; padding: 0; height: 100%;
+    background: var(--bg-dark); color: var(--text-main);
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    overflow: hidden;
+}
+
+header {
+    height: 50px; border-bottom: 1px solid var(--border-color);
+    display: flex; align-items: center; padding: 0 20px;
+    justify-content: space-between; background: var(--bg-dark);
+}
+
+.header-left { display: flex; align-items: center; gap: 15px; }
+.logo-link { text-decoration: none; color: inherit; }
+.header-title { 
+    font-weight: bold; font-size: 0.85rem; letter-spacing: 1px;
+    padding: 4px 0; border: none;
+}
+.header-title:hover { color: var(--accent-green); }
+
+.menu-btn { cursor: pointer; font-size: 1.2rem; text-decoration: none; color: inherit; }
+.about-link { font-size: 0.8rem; color: var(--text-muted); }
+
+main {
+    display: grid;
+    grid-template-columns: 300px 1fr 240px;
+    height: calc(100vh - 50px);
+}
+
+.controls {
+    background: var(--panel-bg); border-right: 1px solid var(--border-color);
+    padding: 30px 20px; display: flex; flex-direction: column; gap: 30px;
+}
+
+.variable-group { display: flex; flex-direction: column; gap: 10px; }
+.variable-group label { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; }
+
+input[type=range] {
+    appearance: none; background: #333; height: 5px; border-radius: 5px; outline: none;
+}
+input[type=range]::-webkit-slider-thumb {
+    appearance: none; width: 16px; height: 16px; background: var(--accent-green); border-radius: 2px; cursor: pointer;
+}
+
+select {
+    background: #222; color: white; border: 1px solid var(--border-color);
+    padding: 8px; border-radius: 4px;
+}
+
+button {
+    background: transparent; border: 1px solid var(--border-color);
+    color: var(--text-main); padding: 10px; cursor: pointer;
+    font-size: 0.75rem; text-transform: uppercase; transition: 0.2s;
+}
+button:hover { background: #252a30; border-color: var(--accent-green); }
+.primary-btn { border-color: var(--accent-green); color: var(--accent-green); }
+.danger-btn { border-color: #f44336; color: #f44336; }
+
+.sim-center {
+    display: grid; grid-template-rows: 1fr 180px; padding: 20px; gap: 20px;
+}
+.sim-center.full { grid-template-rows: 1fr; } /* For Diffusion */
+
+.canvas-container {
+    background: #000; border: 1px solid var(--border-color); border-radius: 4px;
+    position: relative; overflow: hidden;
+}
+
+.readings-container {
+    background: var(--panel-bg); border: 1px solid var(--border-color);
+    border-radius: 4px; padding: 15px; font-family: monospace; color: var(--accent-green);
+}
+
+.info-sidebar { background: var(--panel-bg); border-left: 1px solid var(--border-color); padding: 25px 15px; }
+.timeline { float: left; margin-right: 15px; display: flex; flex-direction: column; align-items: center; }
+.dot { width: 8px; height: 8px; border-radius: 50%; background: #333; margin: 2px 0; }
+.dot.active { background: var(--accent-green); box-shadow: 0 0 8px var(--accent-green); }
+.line { width: 2px; height: 40px; background: #333; }
+
+.info-text h3 { margin: 0 0 10px 0; font-size: 0.9rem; color: var(--text-main); }
+.info-text p { font-size: 0.8rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 10px; }
+.observation-box {
+    background: rgba(76, 175, 80, 0.1); border-left: 2px solid var(--accent-green);
+    padding: 10px; margin-top: 15px; font-size: 0.75rem;
+}
+
+canvas { width: 100%; height: 100%; display: block; }
+
+/* Update these blocks in your global_lab.css */
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Reduces space between variable groups and buttons */
+    padding: 30px 20px;
+    justify-content: flex-start; /* Ensures everything starts at the top */
+}
+
+.button-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    margin-top: 10px; /* Changed from 'auto' to a small fixed margin */
+}
+
+.button-stack button {
+    width: 100%;
+    padding: 12px;
+    font-weight: bold; /* Matches the chunky look from your image */
+    background: rgba(255, 255, 255, 0.05); /* Slight dark backing */
+    cursor: pointer;
+}

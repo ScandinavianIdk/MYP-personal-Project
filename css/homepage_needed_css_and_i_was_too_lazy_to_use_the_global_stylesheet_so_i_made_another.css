@@ -1,0 +1,111 @@
+
+.home-container {
+    display: grid;
+    grid-template-columns: 320px 1fr 260px; 
+    height: calc(100vh - 50px);
+}
+
+
+.hero-sidebar {
+    background: var(--panel-bg);
+    border-right: 1px solid var(--border-color);
+    padding: 40px 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.atom-logo {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    margin-bottom: 25px;
+}
+
+.nucleus-core {
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 12px; height: 12px;
+    background: #fff;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 15px var(--accent-green);
+}
+
+.electron-orbit {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    border: 1px solid rgba(76, 175, 80, 0.4);
+    border-radius: 50%;
+}
+
+.orbit-1 { transform: rotateX(75deg) rotateY(15deg); animation: rotate 4s linear infinite; }
+.orbit-2 { transform: rotateX(75deg) rotateY(135deg); animation: rotate 5s linear infinite; }
+.orbit-3 { transform: rotateX(15deg) rotateY(75deg); animation: rotate 6s linear infinite; }
+
+@keyframes rotate { 100% { transform: rotate(360deg); } }
+
+.hero-text h2 { 
+    font-size: 1.1rem; 
+    margin-bottom: 12px; 
+    color: var(--text-main);
+}
+
+.hero-text p { 
+    font-size: 0.8rem; 
+    color: var(--text-muted); 
+    line-height: 1.5;
+    margin-bottom: 25px;
+}
+
+
+.sim-selection {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    overflow-y: auto;
+}
+
+.sim-card {
+    background: var(--panel-bg);
+    border: 1px solid var(--border-color);
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    text-decoration: none;
+    color: inherit;
+    border-radius: 4px;
+    transition: all 0.2s ease-in-out;
+}
+
+.sim-card:hover {
+    border-color: var(--accent-green);
+    background: rgba(255, 255, 255, 0.02);
+    transform: translateX(5px);
+}
+
+.sim-info h3 { 
+    margin: 0 0 5px 0; 
+    font-size: 1rem; 
+    color: var(--text-main); 
+}
+
+.sim-info p { 
+    margin: 0; 
+    font-size: 0.8rem; 
+    color: var(--text-muted); 
+}
+
+
+
+
+
+.side-panel {
+    background: var(--bg-dark);
+    border-left: 1px solid var(--border-color);
+    padding: 25px 20px;
+}

@@ -1,2 +1,1 @@
-# MYP-personal-Project
-A range of interactive Chemistry simulations
+IDK WHAT IS SUPPOSED TO BE HERE :o

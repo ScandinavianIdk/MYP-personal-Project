@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lab: Gas Laws</title>
+    <link rel="stylesheet" href="../css/New_Global_Style_sheet.css">
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            
+            <a href="../index.html" class="logo-link"><div class="header-title">MOLECULAR SIMULATIONS</div></a>
+        </div>
+        <div class="about-link">About: Ideal Gas Law</div>
+    </header>
+
+    <main>
+        <section class="controls">
+            <div class="variable-group">
+                <label>Temperature (<span id="temp-display">300</span>K)</label>
+                <input type="range" min="50" max="1000" value="300" id="temp-range">
+            </div>
+            <div class="variable-group">
+                <label>Volume (<span id="volume-display">500</span>px)</label>
+                <input type="range" min="100" max="800" value="500" id="volume-range">
+            </div>
+            <div class="variable-group">
+                <label>Particles (<span id="num-display">100</span>)</label>
+                <input type="range" min="1" max="500" value="100" id="num-range">
+            </div>
+            <div class="variable-group">
+                <label>Mass (<span id="mass-display">10</span>amu)</label>
+                <input type="range" min="1" max="50" value="10" id="mass-range">
+            </div>
+        </section>
+
+        <section class="sim-center">
+            <div class="canvas-container">
+                <canvas id="simulationCanvas"></canvas>
+            </div>
+            <div class="readings-container">
+                <div id="pressure-box">SYSTEM PRESSURE: <span id="pressure-display">0.00</span> atm</div>
+                <canvas id="graphCanvas"></canvas>
+            </div>
+        </section>
+
+        <section class="info-sidebar">
+            <div class="info-text">
+                <h3>Learn: Kinetic Theory</h3>
+                <p>Gas pressure is caused by particles colliding with container walls.</p>
+                <p>According to <strong>Boyle's Law</strong>, decreasing volume increases collision frequency.</p>
+                <div class="observation-box">
+                    <strong>Note:</strong> Look at how pressure spikes when you decrease volume or increase temperature.
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="../Simulation Scripts/gaslaws.js"></script>
+    <script src="../block.js"></script>
+</body>
+</html>

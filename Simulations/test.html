@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab | Advanced Reaction Kinetics</title>
+    <link rel="stylesheet" href="../css/New_Global_Style_sheet.css">
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            
+            <a href="../index.html" class="logo-link"><div class="header-title" style="color: var(--accent-green);">MOLECULAR SIMULATIONS</div></a>
+        </div>
+        <div class="about-link">Kinetics v2.0</div>
+    </header>
+
+    <main class="sim-container">
+        <aside class="controls">
+            <section class="variable-group">
+                <label>TEMPERATURE: <span id="temp-display">300</span>K</label>
+                <input type="range" id="temp-range" min="100" max="1200" value="300">
+            </section>
+
+            <section class="variable-group">
+                <label>ACTIVATION ENERGY (Eₐ): <span id="ea-display">40</span></label>
+                <input type="range" id="ea-range" min="5" max="150" value="40">
+            </section>
+
+            <section class="variable-group">
+                <label>PARTICLE COUNT: <span id="num-display">120</span></label>
+                <input type="range" id="num-range" min="20" max="240" step="20" value="120">
+            </section>
+
+            <div class="button-stack">
+                <button class="primary-btn" id="startBtn">Reset Reaction</button>
+                <button class="primary-btn" id="catalystBtn" style="margin-top: 10px; background: rgba(76, 175, 80, 0.2); border-color: var(--accent-green);">Add Catalyst</button>
+            </div>
+        </aside>
+
+        <section class="sim-center">
+            <div class="canvas-container" style="flex: 2;">
+                <canvas id="simulationCanvas"></canvas>
+            </div>
+            
+            <div class="graph-box" style="flex: 1; min-height: 180px; background: #0a0c10; border-top: 1px solid #333; padding: 10px; position: relative;">
+                <canvas id="graphCanvas"></canvas>
+                <div style="position:absolute; top:10px; left:20px; font-size:10px; color:#aaa; font-family:sans-serif;">
+                    <span style="color:#c414aa">■</span> Reactants (A+B) 
+                    <span style="color:#ffee00; margin-left:10px;">■</span> Product C (Large)
+                </div>
+            </div>
+        </section>
+
+        <aside class="info-sidebar">
+            <div class="readings-container">
+                <h3>Analysis</h3>
+                <div class="reading-row"><span>Reactants Remaining:</span> <span id="reactant-count">0</span></div>
+                <div class="reading-row"><span>Products Formed:</span> <span id="product-count" style="color:#ffee00">0</span></div>
+                <div class="reading-row"><span>Reaction Yield:</span> <span id="yield-display">0%</span></div>
+            </div>
+            
+            <div class="info-card">
+                <h3>Collision Theory</h3>
+                <p>Molecules must collide with sufficient kinetic energy to overcome the activation energy barrier and form products.</p>
+                
+            </div>
+            <div style="background: rgba(76, 175, 80, 0.1); border-left: 2px solid var(--accent-green); padding: 8px; margin-top: 15px; font-size: 0.75rem;">
+                <strong>Observation:</strong> Catalysts provide an alternative pathway with a lower activation energy, drastically increasing the reaction rate.
+            </div>
+        </aside>
+    </main>
+    <script src="../Simulation Scripts/test.js"></script>
+    <script src="../block.js"></script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lab: Diffusion</title>
+    <link rel="stylesheet" href="../css/New_Global_Style_sheet.css">
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            
+            <a href="../index.html" class="logo-link"><div class="header-title">MOLECULAR SIMULATIONS</div></a>
+        </div>
+        <div class="about-link">About: Diffusion</div>
+    </header>
+
+    <main>
+        <section class="controls">
+            <div class="variable-group">
+                <label>Temperature (<span id="temp-display">250</span>K)</label>
+                <input type="range" min="50" max="500" value="250" id="temp-range">
+            </div>
+            <div class="variable-group">
+                <label>Radius (<span id="radius-display">5</span>nm)</label>
+                <input type="range" min="0.1" max="10" value="5" id="radius-range" step="0.1">
+            </div>
+            <div class="variable-group">
+                <label>Mass (<span id="mass-display">5</span>amu)</label>
+                <input type="range" min="0.1" max="10" value="5" id="mass-range" step="0.1">
+            </div>
+            <div class="variable-group">
+                <label>Particles (<span id="Num-particles-display">100</span>)</label>
+                <input type="range" min="1" max="1000" value="100" id="Num-particles">
+            </div>
+            <button id="resetBtn" class="primary-btn">Reset Simulation</button>
+        </section>
+
+        <section class="sim-center full">
+            <div class="canvas-container">
+                <canvas id="simulationCanvas"></canvas>
+            </div>
+        </section>
+
+        <section class="info-sidebar">
+            <div class="info-text">
+                <h3>Learn: Entropy</h3>
+                <p>Diffusion is the net movement of particles from high to low concentration.</p>
+                <p>Higher temperatures increase <strong>Kinetic Energy</strong>, speeding up the process.</p>
+                <div class="observation-box">
+                    <strong>Observation:</strong> Larger mass particles diffuse slower due to lower average velocity at the same temperature.
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="../Simulation Scripts/diffusion.js"></script>
+    <script src="../block.js"></script>
+</body>
+</html>

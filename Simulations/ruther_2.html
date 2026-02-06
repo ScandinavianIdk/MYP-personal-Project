@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alvin's Simulations </title>
+    <link rel="stylesheet" href="../css/New_Global_Style_sheet.css">
+</head>
+<body>
+    <header>
+    <div class="header-left">
+        
+        <a href="../index.html" class="logo-link">
+            <div class="header-title">MOLECULAR SIMULATIONS</div>
+        </a>
+
+    </div>
+    
+</header>
+
+    <main>
+        <section class="controls">
+            <div class="variable-group">
+                <label>Target Element</label>
+                <select id="elementSelect">
+                    <option value="79">Gold (Z=79)</option>
+                    <option value="47">Silver (Z=47)</option>
+                    <option value="29">Copper (Z=29)</option>
+                    <option value="13">Aluminum (Z=13)</option>
+                    <option value="92">Uranium (Z=92)</option>
+                    <option value="118">Oganesson (Z=118)</option>
+                </select>
+            </div>
+
+            <div class="variable-group">
+                <input type="range" id="energySlider" min="1" max="10" value="5" step="0.1">
+                <label>Variable: Energy <span id="energyDisp">5.0</span> MeV</label>
+            </div>
+
+            <div class="button-stack">
+                <button class="primary-btn" onclick="fireAlpha()">Fire Alpha Particles</button>
+                <button onclick="toggleTraces()" id="traceBtn">Traces: ON</button>
+                <button class="danger-btn" onclick="clearParticles()">Clear Simulation</button>
+            </div>
+        </section>
+
+        <section class="sim-center">
+            <div class="canvas-container">
+                
+                <canvas id="simCanvas"></canvas>
+            </div>
+            <div class="readings-container">
+                
+                <div id="stats-display">
+                    <p>1 pixel = 1 femtometer</p>
+                    <p id="distanceReadout"></p>
+                </div>
+            </div>
+        </section>
+
+        <section class="info-sidebar">
+    <div class="info-card">
+        <div class="timeline">
+            <div class="dot active"></div>
+            <div class="line"></div>
+            <div class="dot"></div>
+            <div class="line"></div>
+            <div class="dot"></div>
+        </div>
+        <div class="info-text">
+            <h3>Learn: Scattering</h3>
+            <p>
+                In 1911, Ernest Rutherford discovered that the atom is mostly empty space with a tiny, 
+                dense, positively charged <strong>nucleus</strong> at its center.
+            </p>
+            <p>
+                Alpha particles are positively charged. As they approach the nucleus, 
+                the <strong>Coulomb Force</strong> causes them to repel.
+            </p>
+            <div style="background: rgba(76, 175, 80, 0.1); border-left: 2px solid var(--accent-green); padding: 8px; margin-top: 15px; font-size: 0.75rem;">
+                <strong>Observation:</strong> Higher energy particles (MeV) move faster and deflect less, 
+                while a higher Atomic Number (Z) increases the repulsive force.
+            </div>
+        </div>
+    </div>
+</section>
+    </main>
+
+    <script src="../Simulation Scripts/revised_rutherford.js"></script>
+    <script src="../block.js"></script>
+
+
+</body>
+</html>
